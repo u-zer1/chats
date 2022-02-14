@@ -3,3 +3,7 @@ span {
   display: block;
   margin-top: 20px;
 }
+
+a {
+  margin-left: 5px;
+}

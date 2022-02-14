@@ -7,7 +7,12 @@ export const HomePage: React.FC = () => {
   return (
     <div>
       <ReactLogo />
-      <span>React skeleton</span>
+      <span>
+        React skeleton
+        <a href="https://github.com/u-zer1/CRA-skeleton-ts" target="_blank" rel="noreferrer">
+          github
+        </a>
+      </span>
     </div>
   );
 };
