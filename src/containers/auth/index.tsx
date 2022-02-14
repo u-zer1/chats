@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { PATHS } from 'routes';
+import { PATHS } from 'routes/paths';
 
 import { SignInContainer } from './signin/signIn';
 import { SignUpContainer } from './signup/signup';
@@ -17,8 +17,8 @@ export const AuthContainer: React.FC = () => {
   const [activeType, setActiveType] = React.useState<string>(AUTH_TYPE.SIGNIN);
 
   React.useEffect(() => {
-    const isSignup = pathname.includes(PATHS.AUTH_PATHS.SIGNUP);
-    const isSignin = pathname.includes(PATHS.AUTH_PATHS.SIGNIN);
+    const isSignup = pathname.includes(PATHS.AUTH.SIGNUP);
+    const isSignin = pathname.includes(PATHS.AUTH.SIGNIN);
 
     if (isSignup) {
       setActiveType(AUTH_TYPE.SIGNUP);

@@ -1,16 +1,14 @@
-import { ReactElement } from 'react';
+import React from 'react';
 
-interface IRouteMain {
-	isNested?: boolean; // flag for nested route
-	index?: boolean;
-	path?: string;
-	element: ReactElement;
+interface IRouteBase {
+  routes?: IRouteBase[];
+  index?: boolean;
+  path?: string;
+  isPrivate?: string;
+  element: React.ReactNode;
 }
 
-interface IRouteNestedChildren extends IRouteMain {
-	children?: IRouteMain[];
-}
-
-export interface IRoute extends IRouteMain {
-	children?: IRouteNestedChildren[];
+export interface IRoute extends IRouteBase {
+  parentNode?: boolean;
+  title: string;
 }
