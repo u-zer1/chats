@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { PATHS } from './routes';
 
-function App() {
+import { HomePage } from './pages/home';
+import { SignInPage, SignUpPage } from './pages/auth';
+import { GlobalAppContainers } from './containers';
+import { PageNotFond } from './pages/404page';
+
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={PATHS.HOME_PATHS} element={<GlobalAppContainers />}>
+          <Route index element={<HomePage />} />
+        </Route>
+        <Route path={PATHS.AUTH_PATHS.SIGNIN} element={<SignInPage />} />
+        <Route path={PATHS.AUTH_PATHS.SIGNUP} element={<SignUpPage />} />
+        <Route path={PATHS.NOT_FOUND_PATHS} element={<PageNotFond />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
