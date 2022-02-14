@@ -1,4 +1,4 @@
-import { IRoute } from '../../core/types';
+import { IRoute } from 'core/types';
 import { HOME_PATHS } from './path';
 
 export const HomePagePrivateRoutes: IRoute[] = [

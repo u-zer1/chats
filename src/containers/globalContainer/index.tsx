@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 import { Outlet } from 'react-router-dom';
-import { Footer, Header } from '../../components';
+import { Footer, Header } from 'components';
 
 export const GlobalAppContainers: React.FC = () => {
   return (

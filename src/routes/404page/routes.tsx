@@ -1,4 +1,4 @@
-import { IRoute } from '../../core/types';
+import { IRoute } from 'core/types';
 import { NOT_FOUND_PATHS } from './path';
 
 export const pageNotFoundRoutes: IRoute[] = [
