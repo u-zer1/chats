@@ -1,5 +1,11 @@
+import { SignInCart } from 'components';
 import React from 'react';
+import './styles.scss';
 
 export const SignInContainer: React.FC = () => {
-  return <div>Sign in</div>;
+  return (
+    <div className="sign-in">
+      <SignInCart />
+    </div>
+  );
 };

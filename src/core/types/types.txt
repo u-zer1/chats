@@ -1,1 +1,0 @@
-save all global types and models in this folder

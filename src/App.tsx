@@ -1,8 +1,8 @@
 import React from 'react';
-import { PATHS } from 'routes/paths';
+import { PATHS } from 'routes';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { HomePage } from 'pages/home';
+import { InterfacePage } from 'pages/interface';
 import { AuthPage } from 'pages/auth';
 import { GlobalAppContainers } from 'containers/globalContainer';
 import { SignInContainer } from 'containers/auth/signin/signIn';
@@ -14,7 +14,7 @@ export const App: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path={PATHS.HOME_PATHS} element={<GlobalAppContainers />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<InterfacePage />} />
         </Route>
         <Route path={PATHS.AUTH.MAIN} element={<AuthPage />}>
           <Route path={PATHS.AUTH.SIGNIN} element={<SignInContainer />} />

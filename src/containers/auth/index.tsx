@@ -1,4 +1,6 @@
 import React from 'react';
+import './styles.scss';
+
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PATHS } from 'routes/paths';
 
