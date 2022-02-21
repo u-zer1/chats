@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './styles.scss';
 
 import { SignInContainer } from './signin/signIn';
 import { SignUpContainer } from './signup/signup';
 import { Loader } from 'components/Loader';
+
+import { ReactComponent as AstronautIcon } from 'assets/icons/astroman__icon.svg';
 
 enum AUTH_TYPE {
   SIGNIN = 'SIGNIN',
@@ -11,12 +13,11 @@ enum AUTH_TYPE {
 }
 
 export const AuthContainer: React.FC = () => {
-  const ref = React.useRef<HTMLDivElement>(null);
   const [loader, setLoader] = React.useState<boolean>(false);
 
   const [activeType, setActiveType] = React.useState<string>(AUTH_TYPE.SIGNIN);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timeoutID = setTimeout(() => {
       setLoader(false);
     }, 350);
@@ -43,6 +44,7 @@ export const AuthContainer: React.FC = () => {
   return (
     <div className="auth">
       <div className="auth-cart">
+        <AstronautIcon className="auth-cart__symbol" />
         <div className="auth-cart__container">
           <h1 className="auth-cart__title">SPACE CHAT</h1>
           <p className="auth-cart__paragraph">
