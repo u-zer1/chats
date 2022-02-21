@@ -1,4 +1,106 @@
 .auth {
   position: relative;
-  top: 145px;
+  top: 15%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.auth-cart {
+  &__container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 40px 64px;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 35px;
+  }
+
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__paragraph {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 200%;
+    text-align: center;
+    color: var(--black);
+    margin: 0;
+
+    strong {
+      display: block;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 200%;
+      color: var(--black);
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    .button {
+      text-transform: none;
+      margin: 35px 0;
+    }
+  }
+
+  .sign-up__button {
+    margin: 35px 0 0;
+  }
+}
+
+.form__item {
+  &-row {
+    gap: 16px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &-col {
+    gap: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  &-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #828282;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.animation {
+  animation: animation 0.5s linear;
+}
+
+@keyframes animation {
+  from {
+    // transform: scale(0.5);
+    left: 0;
+  }
+  to {
+    left: -1000px;
+    // transform: scale(1);
+  }
 }

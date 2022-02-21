@@ -1,0 +1,50 @@
+.input {
+  &__item {
+    position: relative;
+    width: 100%;
+
+    & .input {
+      width: 100%;
+      height: 40px;
+      padding: 8px;
+      margin: 0;
+      border-radius: 8px;
+      outline: none;
+      color: #000000;
+      border: 1px solid #d0d0d0;
+    }
+
+    & button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    .active svg path {
+      stroke: #ff5733;
+    }
+  }
+
+  &__icon {
+    .input {
+      padding: 8px 8px 8px 40px;
+    }
+
+    & > img {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.after-icon {
+  left: auto !important;
+  right: 0;
+  cursor: pointer;
+}
+
+.visible__indent {
+  padding: 8px 40px 8px !important;
+}

@@ -1,0 +1,14 @@
+.line {
+  color: #828282;
+  text-transform: capitalize;
+
+  &:before,
+  &:after {
+    display: inline-block;
+    content: '';
+    border-top: 1px solid var(--primary-dark);
+    width: 45%;
+    margin: 0 5px;
+    transform: translateY(-3px);
+  }
+}
