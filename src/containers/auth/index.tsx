@@ -14,7 +14,6 @@ enum AUTH_TYPE {
 
 export const AuthContainer: React.FC = () => {
   const [loader, setLoader] = React.useState<boolean>(false);
-
   const [activeType, setActiveType] = React.useState<string>(AUTH_TYPE.SIGNIN);
 
   React.useEffect(() => {
@@ -30,7 +29,7 @@ export const AuthContainer: React.FC = () => {
     setActiveType(type);
   };
 
-  const render = (type: string) => {
+  const renderContent = (type: string) => {
     switch (type) {
       case AUTH_TYPE.SIGNIN:
         return <SignInContainer handleChangeAuth={() => handleChangeType(AUTH_TYPE.SIGNUP)} />;
@@ -50,7 +49,7 @@ export const AuthContainer: React.FC = () => {
           <p className="auth-cart__paragraph">
             <strong>Welcome aboard my friend</strong> just a couple of clicks and we start
           </p>
-          {loader ? <Loader /> : render(activeType)}
+          {loader ? <Loader /> : renderContent(activeType)}
         </div>
       </div>
     </div>

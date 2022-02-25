@@ -1,7 +1,39 @@
 :root {
-  --primary-light: #f3f3f3;
-  --primary-dark: #2f353a;
+  // colors
+  --primary-color: #ffffff;
+  --symbols-color: #37d15d;
+  --status-color: #278eff;
 
-  --white: #ffffff;
-  --black: #000000;
+  // typography color
+  --typography-title-color: #000000;
+  --typography-p-color: #eeeeee;
+
+  // message color
+  --message-n-color: #c6f6d5;
+  --message--m-bg-color: #37d15d;
+  --message-f-bg-color: #e9e9eb;
+
+  // active
+  --active-bg: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // main colors
+    --primary-color: #2f353a;
+    --symbols-color: #278eff;
+    --status-color: #37d15d;
+
+    // typography color
+    --typography-title-color: #ffffff;
+    --typography-p-color: rgba(255, 255, 255, 0.4);
+
+    // message color
+    --message-n-color: #c6f6d5;
+    --message--m-bg-color: #278eff;
+    --message-f-bg-color: #26252a;
+
+    // active
+    --active-bg: rgba(55, 209, 93, 0.06);
+  }
 }

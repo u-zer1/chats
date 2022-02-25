@@ -1,6 +1,12 @@
 import React from 'react';
 import './styles.scss';
 
-export const InterfacePage: React.FC = () => {
-  return <span>Interface Page</span>;
-};
+import { InterFace } from 'containers';
+
+const InterfacePage = () => (
+  <div className="interface-page">
+    <InterFace />
+  </div>
+);
+
+export default InterfacePage as React.FC;

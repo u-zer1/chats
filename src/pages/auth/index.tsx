@@ -3,8 +3,10 @@ import './styles.scss';
 
 import { AuthContainer } from 'containers/auth';
 
-export const AuthPage: React.FC = () => (
+const AuthPage = () => (
   <div className="auth-page">
     <AuthContainer />
   </div>
 );
+
+export default AuthPage as React.FC;

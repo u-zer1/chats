@@ -4,10 +4,13 @@ import './styles/globalStyles.scss';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LayoutProvider from 'context/LayoutContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LayoutProvider>
+      <App />
+    </LayoutProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
