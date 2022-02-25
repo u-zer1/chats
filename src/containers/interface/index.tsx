@@ -1,5 +1,13 @@
 import React from 'react';
 
-export const InterFace: React.FC = () => {
-  return <div style={{ color: 'black' }}>InterFace</div>;
+import { InterfaceAside } from './aside';
+import { InterfaceMainContainer } from './main';
+
+export const Interface: React.FC = () => {
+  return (
+    <>
+      <InterfaceAside />
+      <InterfaceMainContainer />
+    </>
+  );
 };

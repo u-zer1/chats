@@ -1,0 +1,81 @@
+import { IUser } from 'core/types';
+
+export const userList: IUser[] = [
+  {
+    img: '',
+    name: 'user name',
+    lastSeen: '22',
+    prevMessage: 'xa-xa-xa',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+  {
+    img: '',
+    name: 'name user',
+    lastSeen: '1',
+    prevMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus?',
+    notify: '#hot',
+  },
+];

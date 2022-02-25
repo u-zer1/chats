@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.scss';
 
-import { InterFace } from 'containers';
+import { Interface } from 'containers';
 
 const InterfacePage = () => (
   <div className="interface-page">
-    <InterFace />
+    <Interface />
   </div>
 );
 

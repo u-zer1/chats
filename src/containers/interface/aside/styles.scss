@@ -1,0 +1,35 @@
+.aside {
+  max-width: 440px;
+  width: 100%;
+  border-right: 1px solid var(--message-f-bg-color);
+
+  &-top {
+    padding: 24px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--message-f-bg-color);
+
+    &__button {
+      width: 40px;
+      height: 40px;
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  &-search {
+    padding: 24px 12px;
+  }
+
+  & &-input input {
+    height: 48px;
+    border: none;
+    background-color: var(--input-bg-color);
+  }
+
+  &-user__list {
+    padding: 24px 12px;
+  }
+}

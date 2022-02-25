@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface IRouteBase {
   routes?: IRouteBase[];
   index?: boolean;

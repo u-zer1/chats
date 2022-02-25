@@ -1,6 +1,4 @@
 import React from 'react';
-import './styles.scss';
-
 import { Outlet } from 'react-router-dom';
 
 export const GlobalAppContainers: React.FC = () => {

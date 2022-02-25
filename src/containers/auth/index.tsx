@@ -5,7 +5,7 @@ import { SignInContainer } from './signin/signIn';
 import { SignUpContainer } from './signup/signup';
 import { Loader } from 'components/Loader';
 
-import { ReactComponent as AstronautIcon } from 'assets/icons/astroman__icon.svg';
+import { ReactComponent as AstronautIcon } from 'assets/icons/auth/astroman__icon.svg';
 
 enum AUTH_TYPE {
   SIGNIN = 'SIGNIN',

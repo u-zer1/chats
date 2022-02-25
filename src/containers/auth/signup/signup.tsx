@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import '../styles.scss';
 
-import Input from 'components/form/input';
-import SpaceLine from 'components/spaceLine';
-import PrimaryButton from 'components/buttons/primaryButton';
+import { Input, SpaceLine, PrimaryButton } from 'components';
 
-import EmailIcon from 'assets/icons/email__icon.svg';
-import LockIcon from 'assets/icons/lock__icon.svg';
-import VisibleIcon from 'assets/icons/visible_icon.svg';
-import InfoIcon from 'assets/icons/info__icon.svg';
+import EmailIcon from 'assets/icons/auth/email__icon.svg';
+import LockIcon from 'assets/icons/auth/lock__icon.svg';
+import VisibleIcon from 'assets/icons/auth/visible_icon.svg';
+import InfoIcon from 'assets/icons/auth/info__icon.svg';
 
 interface ISignUpContainer {
   handleChangeAuth: () => void;

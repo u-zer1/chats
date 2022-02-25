@@ -1,4 +1,7 @@
 export interface IUser {
-	username: string;
-	password: string;
+  name: string;
+  img: string;
+  lastSeen: string;
+  prevMessage: string;
+  notify: string;
 }

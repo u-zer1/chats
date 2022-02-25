@@ -1,7 +1,10 @@
 import React from 'react';
+import './styles.scss';
 
-const InterfaceMainContainer = () => {
-  return <div>InterfaceMainContainer</div>;
+export const InterfaceMainContainer: React.FC = () => {
+  return (
+    <main className="main">
+      <span>InterfaceMainContainer</span>
+    </main>
+  );
 };
-
-export default InterfaceMainContainer as React.FC;

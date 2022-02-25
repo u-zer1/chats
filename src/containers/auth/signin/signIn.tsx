@@ -1,15 +1,13 @@
 import React from 'react';
 import '../styles.scss';
 
-import Input from 'components/form/input';
-import SpaceLine from 'components/spaceLine';
-import PrimaryButton from 'components/buttons/primaryButton';
+import { Input, PrimaryButton, SpaceLine } from 'components';
 
-import EmailIcon from 'assets/icons/email__icon.svg';
-import LockIcon from 'assets/icons/lock__icon.svg';
-import VisibleIcon from 'assets/icons/visible_icon.svg';
-import GoogleIcon from 'assets/icons/google__icon.svg';
-import GitlabIcon from 'assets/icons/gitlab__icon.svg';
+import EmailIcon from 'assets/icons/auth/email__icon.svg';
+import LockIcon from 'assets/icons/auth/lock__icon.svg';
+import VisibleIcon from 'assets/icons/auth/visible_icon.svg';
+import GoogleIcon from 'assets/icons/auth/google__icon.svg';
+import GitlabIcon from 'assets/icons/auth/gitlab__icon.svg';
 
 interface ISignInContainer {
   handleChangeAuth: () => void;

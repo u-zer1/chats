@@ -1,0 +1,50 @@
+.user {
+  &-card {
+    width: 100%;
+    overflow: hidden;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+
+    &__left {
+      margin-right: 16px;
+    }
+
+    & &__right {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      justify-content: flex-start;
+      flex-flow: column;
+    }
+
+    &__info {
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: flex;
+      color: var(--typography-title-color);
+      justify-content: space-between;
+    }
+
+    &__name {
+      text-transform: capitalize;
+    }
+
+    & &__message {
+      font-weight: 400;
+      max-width: 270px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: var(--typography-p-color);
+    }
+  }
+
+  &-active {
+    background: var(--active-bg);
+  }
+}

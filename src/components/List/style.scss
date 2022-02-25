@@ -1,0 +1,33 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  &-scroll {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 170px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px #e9e9eb;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #e9e9eb;
+      border: 2px solid #e9e9eb;
+    }
+  }
+}
