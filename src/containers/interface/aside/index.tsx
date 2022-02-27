@@ -1,25 +1,36 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import './styles.scss';
 
-import { IUser } from 'core/types';
-import { userList } from 'core/mock/userListMock';
+import { Input, List, PrimaryButton, Togglebutton, UserCard } from 'components';
 
-import { Input, List, PrimaryButton, Togglebutton } from 'components';
+import { IUser, EMODE } from 'core/types';
+import { LayoutContext } from 'context/LayoutContext';
+
+import { useLocalStorage } from 'core/hooks';
+import { userList } from 'core/mock/userListMock';
 
 import PlusIcon from 'assets/icons/interface/plus__icon.svg';
 import SearchIcon from 'assets/icons/interface/search__icon.svg';
-import UserCard from 'components/Cards/userCard';
 
 export const InterfaceAside: React.FC = () => {
-  const [themeMode, setThemeMode] = React.useState<boolean>(false);
+  const [store] = useLocalStorage('mode');
+
+  const { saveSettings } = React.useContext(LayoutContext);
+  const [themeMode, setThemeMode] = React.useState<boolean>(store?.theme === EMODE.DARK || false);
+
   const [search, setSearch] = React.useState<string>('');
   const [active, setActive] = React.useState<number>(0);
+
+  React.useEffect(() => {
+    const mode = themeMode ? EMODE.DARK : EMODE.LIGHT;
+    saveSettings({ theme: mode });
+  }, [themeMode]);
 
   return (
     <aside className="aside">
       <div className="aside-top">
         <Togglebutton name="theme-mode" onChange={() => setThemeMode(!themeMode)} value={themeMode} />
-        <PrimaryButton className="aside-top__button" icon={PlusIcon} type="button" color="green" />
+        <PrimaryButton className="aside-top__button" icon={PlusIcon} type="button" color={themeMode ? 'blue' : 'green'} />
       </div>
       <div className="aside-content">
         <div className="aside-search">
@@ -28,7 +39,7 @@ export const InterfaceAside: React.FC = () => {
             type="text"
             name="search"
             className="aside-input"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
             placeholder="Search messages"
             value={search}
           />

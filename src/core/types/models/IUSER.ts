@@ -3,5 +3,5 @@ export interface IUser {
   img: string;
   lastSeen: string;
   prevMessage: string;
-  notify: string;
+  notify: boolean;
 }

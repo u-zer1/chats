@@ -1,0 +1,23 @@
+.status {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  color: #828689;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+  &-online:before {
+    background: var(--status-color);
+  }
+}

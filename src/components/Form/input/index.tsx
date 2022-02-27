@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React from 'react';
 import './style.scss';
 
 interface InputProps {
@@ -16,7 +16,7 @@ interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input: FC<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
   id,
   name,
   type,
@@ -30,10 +30,10 @@ export const Input: FC<InputProps> = ({
   inputClassName,
   autoComplete = 'off',
 }) => {
-  const [visible, setVisible] = useState<boolean>(false);
+  const [visible, setVisible] = React.useState<boolean>(false);
 
   return (
-    <div className={`input__item ${className || ''} ${beforeIcon ? 'input__icon' : ''}`}>
+    <div className={`input__item ${className || ''} ${beforeIcon || afterIcon ? 'input__icon' : ''}`}>
       {label && <label htmlFor={id || name}>{label}</label>}
       {beforeIcon && <img src={beforeIcon} alt="before icon" />}
       <input

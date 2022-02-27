@@ -11,7 +11,7 @@ interface ButtonProps {
   disable?: boolean;
 }
 
-type btnColor = 'primary' | 'green';
+type btnColor = 'primary' | 'green' | 'blue';
 type btnTypes = 'button' | 'submit' | 'reset';
 
 export const PrimaryButton: React.FC<ButtonProps> = ({ label, onClick, type, color = 'primary', disable = false, icon, className }) => {

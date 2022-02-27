@@ -5,9 +5,9 @@ import { InterfaceMainContainer } from './main';
 
 export const Interface: React.FC = () => {
   return (
-    <>
+    <React.Fragment>
       <InterfaceAside />
       <InterfaceMainContainer />
-    </>
+    </React.Fragment>
   );
 };

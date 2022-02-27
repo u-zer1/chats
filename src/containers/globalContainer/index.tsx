@@ -1,9 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-export const GlobalAppContainers: React.FC = () => {
+interface IGlobalAppContainers {
+  theme?: string;
+}
+
+export const GlobalAppContainers: React.FC<IGlobalAppContainers> = ({ theme }) => {
   return (
-    <div className="page">
+    <div className={`page ${theme}`}>
       <div className="page__wrapper">
         <Outlet />
       </div>

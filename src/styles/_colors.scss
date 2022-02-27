@@ -1,4 +1,4 @@
-:root {
+.light {
   // colors
   --primary-color: #ffffff;
   --symbols-color: #37d15d;
@@ -13,35 +13,53 @@
   --typography-p-color: #828282;
 
   // message color
-  --message-n-color: #c6f6d5;
   --message--m-bg-color: #37d15d;
+  --message-m-color: #fff;
   --message-f-bg-color: #e9e9eb;
+  --message-f-color: #000;
+
+  // notify
+  --notify-bg-color: #278eff;
+
+  // border color
+  --border-color: #e9e9eb;
+
+  // scroll bar
+  --scroll-color: #464646;
 
   // active
   --active-bg: #f3fdf6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    // main colors
-    --primary-color: #2f353a;
-    --symbols-color: #278eff;
-    --status-color: #37d15d;
+.dark {
+  // main colors
+  --primary-color: #2f353a;
+  --symbols-color: #278eff;
+  --status-color: #37d15d;
 
-    //input
-    --input-bg-color: #f3f3f3;
-    --line-color: #eeeeee;
+  //input
+  --input-bg-color: #f3f3f3;
+  --line-color: #eeeeee;
 
-    // typography color
-    --typography-title-color: #ffffff;
-    --typography-p-color: rgba(255, 255, 255, 0.4);
+  // typography color
+  --typography-title-color: #ffffff;
+  --typography-p-color: #828689;
 
-    // message color
-    --message-n-color: #c6f6d5;
-    --message--m-bg-color: #278eff;
-    --message-f-bg-color: #26252a;
+  // message color
+  --message--m-bg-color: #278eff;
+  --message-m-color: #fff;
+  --message-f-bg-color: #26252a;
+  --message-f-color: #ffffff;
 
-    // active
-    --active-bg: #3b4146;
-  }
+  // notify
+  --notify-bg-color: #278eff;
+
+  // border color
+  --border-color: #26252a;
+
+  // scroll bar
+  --scroll-color: #464646;
+
+  // active
+  --active-bg: #3b4146;
 }

@@ -1,13 +1,13 @@
 .user {
   &-card {
+    position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 12px;
+    padding: 24px 12px;
     cursor: pointer;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    transition: all 0.3s ease;
     border-radius: 12px;
 
     &__left {
@@ -41,6 +41,16 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       color: var(--typography-p-color);
+    }
+
+    &__notify {
+      position: absolute;
+      bottom: 28px;
+      right: 22px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--notify-bg-color);
     }
   }
 

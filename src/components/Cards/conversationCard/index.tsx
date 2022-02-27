@@ -2,15 +2,10 @@ import React from 'react';
 import './style.scss';
 
 import { Avatar, List } from 'components';
+import { IMessage } from 'core/types';
 
-interface ConversationCardProps {
-  message: string[];
-  avatar: string;
-  dirRight?: boolean;
-}
-
-const ConversationCard: React.FC<ConversationCardProps> = ({ message, avatar, dirRight }) => {
-  const selectedDirections = dirRight ? 'dir-right' : 'dir-left';
+export const ConversationCard: React.FC<IMessage> = ({ message, avatar, person }) => {
+  const selectedDirections = person === 'me' ? 'dir-right' : 'dir-left';
   return (
     <div className={`conversation ${selectedDirections}`}>
       <div className="conversation__left">
@@ -22,5 +17,3 @@ const ConversationCard: React.FC<ConversationCardProps> = ({ message, avatar, di
     </div>
   );
 };
-
-export default ConversationCard;

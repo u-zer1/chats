@@ -101,6 +101,8 @@
     line-height: 16px;
     color: var(--typography-title-color);
     text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 0;
   }
 }

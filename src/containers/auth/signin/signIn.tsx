@@ -23,6 +23,7 @@ export const SignInContainer: React.FC<ISignInContainer> = ({ handleChangeAuth }
 
   const handleChangeToSignIn = () => {
     handleChangeAuth();
+    console.log('password: ', password);
   };
 
   return (

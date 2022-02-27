@@ -18,7 +18,7 @@ export const List = <T extends exType>({ items, scroll, onClick, className, rend
   return (
     <ul className={`list ${className || ''} ${isScroll}`}>
       {items.map((e: any, idx: number) => (
-        <li key={e.id || idx} onClick={() => isClicked(idx)} className="list__item" tabIndex={idx + 1} aria-hidden="true">
+        <li key={e.id || idx} onClick={() => isClicked(idx)} className="list__item" aria-hidden="true">
           {renderItem(e, idx)}
         </li>
       ))}

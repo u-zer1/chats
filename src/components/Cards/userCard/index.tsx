@@ -10,7 +10,7 @@ interface UserCardProps {
   active?: number;
 }
 
-const UserCard: React.FC<UserCardProps> = ({ user: { img, name, lastSeen, prevMessage, notify }, index, active }) => {
+export const UserCard: React.FC<UserCardProps> = ({ user: { img, name, lastSeen, prevMessage, notify }, index, active }) => {
   const isActive = active === index ? 'user-active' : '';
   return (
     <div className={`user-card ${isActive}`}>
@@ -23,10 +23,8 @@ const UserCard: React.FC<UserCardProps> = ({ user: { img, name, lastSeen, prevMe
           <span className="user-card__lastseen">{`${lastSeen} m`}</span>
         </div>
         <div className="user-card__message">{prevMessage}</div>
-        <div className="user-card__tags">{notify}</div>
+        {notify && <div className="user-card__notify" />}
       </div>
     </div>
   );
 };
-
-export default UserCard;
