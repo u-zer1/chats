@@ -1,11 +1,10 @@
 import React from 'react';
 import './styles.scss';
 
+import { LayoutContext } from 'context/LayoutContext';
 import { Input, List, PrimaryButton, Togglebutton, UserCard } from 'components';
 
 import { IUser, EMODE } from 'core/types';
-import { LayoutContext } from 'context/LayoutContext';
-
 import { useLocalStorage } from 'core/hooks';
 import { userList } from 'core/mock/userListMock';
 
@@ -35,13 +34,13 @@ export const InterfaceAside: React.FC = () => {
       <div className="aside-content">
         <div className="aside-search">
           <Input
-            beforeIcon={SearchIcon}
             type="text"
             name="search"
-            className="aside-input"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-            placeholder="Search messages"
             value={search}
+            className="aside-input"
+            placeholder="Search messages"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+            IconBefore={SearchIcon}
           />
         </div>
         <div className="aside-user__list">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles.scss';
 
 import { Input, SpaceLine, PrimaryButton } from 'components';
@@ -13,9 +13,9 @@ interface ISignUpContainer {
 }
 
 export const SignUpContainer: React.FC<ISignUpContainer> = ({ handleChangeAuth }) => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [rePassword, setRePassword] = useState<string>('');
+  const [email, setEmail] = React.useState<string>('');
+  const [password, setPassword] = React.useState<string>('');
+  const [rePassword, setRePassword] = React.useState<string>('');
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,36 +29,36 @@ export const SignUpContainer: React.FC<ISignUpContainer> = ({ handleChangeAuth }
     <form className="auth-cart__form" onSubmit={onSubmit} autoComplete="off">
       <div className="form__item-col">
         <Input
-          beforeIcon={InfoIcon}
           name="full-name"
           type="text"
           value={email}
           placeholder="Full name"
           onChange={(e) => setEmail(e.target.value)}
+          IconBefore={InfoIcon}
         />
         <Input
-          beforeIcon={EmailIcon}
           name="Email"
           type="text"
           value={email}
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
+          IconBefore={EmailIcon}
         />
         <Input
-          beforeIcon={LockIcon}
-          afterIcon={VisibleIcon}
           name="password"
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          IconBefore={LockIcon}
+          IconAfter={VisibleIcon}
         />
         <Input
-          beforeIcon={LockIcon}
-          afterIcon={VisibleIcon}
           name="repassword"
           type="password"
           placeholder="Repeat password"
           onChange={(e) => setRePassword(e.target.value)}
+          IconBefore={LockIcon}
+          IconAfter={VisibleIcon}
         />
       </div>
       <div className="form__item-col">

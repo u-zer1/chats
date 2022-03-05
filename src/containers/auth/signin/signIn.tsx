@@ -14,6 +14,8 @@ interface ISignInContainer {
 }
 
 export const SignInContainer: React.FC<ISignInContainer> = ({ handleChangeAuth }) => {
+  const [visible, setVisible] = React.useState<boolean>(false);
+
   const [login, setLogin] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
 
@@ -21,29 +23,25 @@ export const SignInContainer: React.FC<ISignInContainer> = ({ handleChangeAuth }
     e.preventDefault();
   };
 
-  const handleChangeToSignIn = () => {
-    handleChangeAuth();
-    console.log('password: ', password);
-  };
-
   return (
     <form className="auth-cart__form" onSubmit={onSubmit} autoComplete="off">
       <div className="form__item-col">
         <Input
-          beforeIcon={EmailIcon}
           name="login"
           type="text"
           value={login}
           placeholder="login"
           onChange={(e) => setLogin(e.target.value)}
+          IconBefore={EmailIcon}
         />
         <Input
           name="password"
-          type="password"
-          beforeIcon={LockIcon}
-          afterIcon={VisibleIcon}
+          type={visible ? 'text' : 'password'}
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
+          IconBefore={LockIcon}
+          IconAfter={VisibleIcon}
+          IconAfterClick={() => setVisible(!visible)}
         />
       </div>
       <div className="form__item-col">
@@ -56,7 +54,7 @@ export const SignInContainer: React.FC<ISignInContainer> = ({ handleChangeAuth }
       </div>
       <span className="form__item-text">Have no account yet?</span>
       <div className="form__item-col">
-        <PrimaryButton onClick={handleChangeToSignIn} label="Sign up" type="button" color="primary" />
+        <PrimaryButton onClick={handleChangeAuth} label="Sign up" type="button" color="primary" />
       </div>
     </form>
   );

@@ -1,52 +1,47 @@
 import React from 'react';
+import classNames from 'classnames';
 import './style.scss';
 
-interface InputProps {
-  id?: string;
-  name: string;
-  label?: string;
+import { IFormFields } from '../types';
+
+interface InputProps extends IFormFields<HTMLInputElement> {
   type: string;
-  value?: any;
-  afterIcon?: string;
-  beforeIcon?: string;
-  placeholder?: string;
-  className?: string;
   inputClassName?: string;
-  autoComplete?: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input: React.FC<InputProps> = ({
   id,
   name,
   type,
-  value,
   label,
-  onChange,
+  value,
+  IconAfter,
+  IconBefore,
   placeholder,
-  beforeIcon,
-  afterIcon,
   className,
   inputClassName,
+  onChange,
   autoComplete = 'off',
+  IconBeforeClick,
+  IconAfterClick,
 }) => {
-  const [visible, setVisible] = React.useState<boolean>(false);
-
   return (
-    <div className={`input__item ${className || ''} ${beforeIcon || afterIcon ? 'input__icon' : ''}`}>
+    <div className={classNames('input__wrapper', className)}>
       {label && <label htmlFor={id || name}>{label}</label>}
-      {beforeIcon && <img src={beforeIcon} alt="before icon" />}
       <input
         id={id || name}
-        type={visible ? 'text' : type}
+        type={type || 'text'}
         name={name}
         onChange={onChange}
         value={value}
         placeholder={placeholder}
         autoComplete={autoComplete}
-        className={`input  ${afterIcon ? 'visible__indent' : ''} ${inputClassName}`}
+        className={classNames('input', IconBefore && 'l__indent', IconAfter && 'r__indent', inputClassName)}
       />
-      {afterIcon && <img className="after-icon" onClick={() => setVisible(!visible)} src={afterIcon} alt="after icon" />}
+      <div className="icon-container">
+        {IconBefore && <img className="before-icon" src={IconBefore} onClick={IconBeforeClick} alt="before icon" />}
+        {IconAfter && <img className="after-icon" onClick={IconAfterClick} src={IconAfter} alt="after icon" />}
+      </div>
     </div>
   );
 };

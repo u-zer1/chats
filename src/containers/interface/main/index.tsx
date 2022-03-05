@@ -1,14 +1,16 @@
 import React from 'react';
 import './styles.scss';
 
+import { IMessage } from 'core/types';
 import { messageList } from 'core/mock/userCoversation';
 
+import { Textarea } from 'components/Form/textArea';
 import { Avatar, ConversationCard, Input, List, Status } from 'components';
 
 import SearchIcon from 'assets/icons/interface/search__icon.svg';
-import { IMessage } from 'core/types';
 
 export const InterfaceMainContainer: React.FC = () => {
+  const [text, setText] = React.useState<string>('');
   return (
     <main className="main">
       <div className="main-top">
@@ -23,7 +25,14 @@ export const InterfaceMainContainer: React.FC = () => {
             </div>
           </div>
         </div>
-        <Input afterIcon={SearchIcon} name="search" onChange={() => console.log('')} type="text" placeholder="search..." />
+        <Input
+          name="search"
+          type="text"
+          placeholder="search..."
+          className="input__item"
+          onChange={() => console.log('')}
+          IconAfter={SearchIcon}
+        />
       </div>
       <div className="main-content">
         <List
@@ -33,6 +42,9 @@ export const InterfaceMainContainer: React.FC = () => {
             return <ConversationCard message={data.message} avatar={data.avatar} person={data.person} />;
           }}
         />
+        <div className="new-message-wrapper">
+          <Textarea name="chat-textare" onChange={(e) => setText(e.target.value)} value={text} placeholder="message" />
+        </div>
       </div>
     </main>
   );

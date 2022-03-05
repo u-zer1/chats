@@ -67,6 +67,10 @@
   &__form {
     width: 100%;
 
+    .after-icon {
+      cursor: pointer;
+    }
+
     .button {
       text-transform: none;
       margin: 35px 0;

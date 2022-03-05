@@ -1,5 +1,5 @@
 .input {
-  &__item {
+  &__wrapper {
     position: relative;
     width: 100%;
 
@@ -10,8 +10,9 @@
       margin: 0;
       border-radius: 8px;
       outline: none;
-      color: #000000;
-      border: 1px solid #d0d0d0;
+      color: var(--input-color);
+      border: 1px solid var(--border-color);
+      background: var(--input-bg-color);
     }
 
     & button {
@@ -19,28 +20,42 @@
       top: 8px;
       right: 8px;
     }
-  }
 
-  &__icon {
-    .input {
-      padding: 8px 8px 8px 40px;
+    .r__indent {
+      padding-right: 40px !important;
     }
 
-    & > img {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      transform: translate(-50%, -50%);
+    .l__indent {
+      padding-left: 40px !important;
     }
   }
 }
 
-.after-icon {
-  left: auto !important;
+.icon-container {
+  position: absolute;
+  top: 0;
   right: 0;
-  cursor: pointer;
-}
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
 
-.visible__indent {
-  padding: 8px 40px 8px 8px !important;
+  & img {
+    width: 17px;
+    height: 17px;
+  }
+
+  & .before-icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    pointer-events: all;
+  }
+  & .after-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    pointer-events: all;
+  }
 }
