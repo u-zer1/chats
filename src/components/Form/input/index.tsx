@@ -39,8 +39,8 @@ export const Input: React.FC<InputProps> = ({
         className={classNames('input', IconBefore && 'l__indent', IconAfter && 'r__indent', inputClassName)}
       />
       <div className="icon-container">
-        {IconBefore && <img className="before-icon" src={IconBefore} onClick={IconBeforeClick} alt="before icon" />}
-        {IconAfter && <img className="after-icon" onClick={IconAfterClick} src={IconAfter} alt="after icon" />}
+        {IconBefore && <IconBefore className="before-icon" onClick={IconBeforeClick} />}
+        {IconAfter && <IconAfter className="after-icon" onClick={IconAfterClick} />}
       </div>
     </div>
   );

@@ -8,8 +8,8 @@ import { IUser, EMODE } from 'core/types';
 import { useLocalStorage } from 'core/hooks';
 import { userList } from 'core/mock/userListMock';
 
-import PlusIcon from 'assets/icons/interface/plus__icon.svg';
-import SearchIcon from 'assets/icons/interface/search__icon.svg';
+import { ReactComponent as PlusIcon } from 'assets/icons/interface/plus__icon.svg';
+import { ReactComponent as SearchIcon } from 'assets/icons/interface/search__icon.svg';
 
 export const InterfaceAside: React.FC = () => {
   const [store] = useLocalStorage('mode');
@@ -29,7 +29,7 @@ export const InterfaceAside: React.FC = () => {
     <aside className="aside">
       <div className="aside-top">
         <Togglebutton name="theme-mode" onChange={() => setThemeMode(!themeMode)} value={themeMode} />
-        <PrimaryButton className="aside-top__button" icon={PlusIcon} type="button" color={themeMode ? 'blue' : 'green'} />
+        <PrimaryButton className="aside-top__button" Icon={PlusIcon} type="button" color={themeMode ? 'blue' : 'green'} />
       </div>
       <div className="aside-content">
         <div className="aside-search">

@@ -22,6 +22,8 @@ export const Textarea: React.FC<ITextArea> = ({
   name,
   value,
   onChange,
+  IconBeforeClick,
+  IconAfterClick,
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.scrollHeight <= maxHeight) {
@@ -46,11 +48,11 @@ export const Textarea: React.FC<ITextArea> = ({
         maxLength={maxLength}
         onChange={handleChange}
         placeholder={placeholder}
-        className={classNames('textarea', { IconAfter: 'visible__indent' }, { textareaClassname })}
+        className={classNames('textarea', IconBefore && 'l__indent', IconAfter && 'r__indent', textareaClassname)}
       />
       <div className="icon-container">
-        {IconAfter && <IconAfter />}
-        {IconBefore && <IconBefore />}
+        {IconAfter && <IconAfter onClick={IconBeforeClick} className="after-icon" />}
+        {IconBefore && <IconBefore onClick={IconAfterClick} className="before-icon" />}
       </div>
     </div>
   );

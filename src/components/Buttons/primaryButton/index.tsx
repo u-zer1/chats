@@ -1,24 +1,25 @@
 import React from 'react';
-import './style.scss';
+import classNames from 'classnames';
+import '../styles.scss';
 
 interface ButtonProps {
   label?: string;
   type: btnTypes;
   color?: btnColor;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  icon?: string;
   className?: string;
   disable?: boolean;
+  Icon?: any;
 }
 
 type btnColor = 'primary' | 'green' | 'blue';
 type btnTypes = 'button' | 'submit' | 'reset';
 
-export const PrimaryButton: React.FC<ButtonProps> = ({ label, onClick, type, color = 'primary', disable = false, icon, className }) => {
+export const PrimaryButton: React.FC<ButtonProps> = ({ label, onClick, type, color = 'primary', disable = false, Icon, className }) => {
   const buttonType: btnTypes = type as btnTypes;
   return (
-    <button type={buttonType} onClick={onClick} className={`button button__color-${color} ${className}`} disabled={disable}>
-      {icon && <img className="button__icon" src={icon} alt="google" />}
+    <button type={buttonType} onClick={onClick} className={classNames(`button button__color-${color}`, className)} disabled={disable}>
+      {Icon && <Icon className="button__icon" />}
       {label}
     </button>
   );

@@ -3,6 +3,10 @@
   top: 15%;
   max-width: 500px;
   margin: 0 auto;
+
+  &-loader {
+    position: relative;
+  }
 }
 
 .auth-cart {

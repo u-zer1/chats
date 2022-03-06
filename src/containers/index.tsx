@@ -1,3 +1,3 @@
 export * from './auth';
 export * from './interface';
-export * from './globalContainer';
+export * from './root';

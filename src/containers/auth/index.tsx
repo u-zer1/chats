@@ -49,7 +49,7 @@ export const AuthContainer: React.FC = () => {
           <p className="auth-cart__paragraph">
             <strong>Welcome aboard my friend</strong> just a couple of clicks and we start
           </p>
-          {loader ? <Loader /> : renderContent(activeType)}
+          {loader ? <Loader className="auth-loader" /> : renderContent(activeType)}
         </div>
       </div>
     </div>

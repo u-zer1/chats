@@ -3,10 +3,10 @@ import '../styles.scss';
 
 import { Input, SpaceLine, PrimaryButton } from 'components';
 
-import EmailIcon from 'assets/icons/auth/email__icon.svg';
-import LockIcon from 'assets/icons/auth/lock__icon.svg';
-import VisibleIcon from 'assets/icons/auth/visible_icon.svg';
-import InfoIcon from 'assets/icons/auth/info__icon.svg';
+import { ReactComponent as EmailIcon } from 'assets/icons/auth/email__icon.svg';
+import { ReactComponent as LockIcon } from 'assets/icons/auth/lock__icon.svg';
+import { ReactComponent as VisibleIcon } from 'assets/icons/auth/visible_icon.svg';
+import { ReactComponent as InfoIcon } from 'assets/icons/auth/info__icon.svg';
 
 interface ISignUpContainer {
   handleChangeAuth: () => void;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss';
+import '../styles.scss';
 
 import { Link } from 'react-router-dom';
 
@@ -7,16 +7,16 @@ interface ButtonProps {
   label: string;
   path: string;
   color?: btnColor;
-  icon?: string;
   className?: string;
+  Icon?: any;
 }
 
 type btnColor = 'primary' | 'green';
 
-export const PrimaryLink: React.FC<ButtonProps> = ({ icon, label, path, color = 'primary', className }) => {
+export const PrimaryLink: React.FC<ButtonProps> = ({ Icon, label, path, color = 'primary', className }) => {
   return (
     <Link to={path} className={`button button__color-${color} ${className}`}>
-      {icon && <img className="button__icon" src={icon} alt="google" />}
+      {Icon && <Icon className="button__icon" />}
       {label}
     </Link>
   );

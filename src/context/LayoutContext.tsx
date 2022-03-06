@@ -19,7 +19,7 @@ const defaultSettings = {
 export const LayoutContext = React.createContext<IContext>({} as IContext);
 
 const LayoutProvider: React.FC<any> = ({ children, settings }) => {
-  const [currentSettings, setCurrentSettings] = React.useState<IDefaultSettings>(defaultSettings || settings);
+  const [currentSettings, setCurrentSettings] = React.useState<IDefaultSettings>(settings);
 
   React.useEffect(() => {
     if (currentSettings) saveLocalStore('mode', currentSettings);
