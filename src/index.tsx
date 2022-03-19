@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import './styles/globalStyles.scss';
 
 import App from './App';
+
+import { Provider } from 'react-redux';
+import { store } from 'core/store';
 import reportWebVitals from './reportWebVitals';
 import LayoutProvider from 'context/LayoutContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LayoutProvider>
-      <App />
-    </LayoutProvider>
+    <Provider store={store}>
+      <LayoutProvider>
+        <App />
+      </LayoutProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

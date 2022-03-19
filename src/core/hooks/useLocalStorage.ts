@@ -26,7 +26,7 @@ export const useLocalStorage = <Type>(key: string, initialValue?: Type) => {
     }
   };
 
-  const [store, setStore] = React.useState<any>(loadStore());
+  const [store, setStore] = React.useState(loadStore());
 
   React.useEffect(() => {
     saveStore(store);

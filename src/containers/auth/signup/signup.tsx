@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles.scss';
 
+import { useSignupMutation } from 'core/store/services';
 import { Input, SpaceLine, PrimaryButton } from 'components';
 
 import { ReactComponent as EmailIcon } from 'assets/icons/auth/email__icon.svg';
@@ -13,27 +14,51 @@ interface ISignUpContainer {
 }
 
 export const SignUpContainer: React.FC<ISignUpContainer> = ({ handleChangeAuth }) => {
+  // Slice
+  const [addUser] = useSignupMutation();
+
+  // States
+  const [firstName, setFirstName] = React.useState<string>('');
+  const [lastName, setLastName] = React.useState<string>('');
   const [email, setEmail] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
   const [rePassword, setRePassword] = React.useState<string>('');
+  const [error, setError] = React.useState<string>('');
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (password !== rePassword) {
+      return setError('password must be equal!!');
+    }
+    const data = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password,
+    };
 
-    console.log('login: ', email);
-    console.log('password: ', password);
-    console.log('rePassword: ', rePassword);
+    const response = await addUser(data);
+    console.log('response: ', response);
   };
 
   return (
     <form className="auth-cart__form" onSubmit={onSubmit} autoComplete="off">
+      {error && <span>{error}</span>}
       <div className="form__item-col">
         <Input
-          name="full-name"
+          name="first-name"
           type="text"
-          value={email}
-          placeholder="Full name"
-          onChange={(e) => setEmail(e.target.value)}
+          value={firstName}
+          placeholder="First name"
+          onChange={(e) => setFirstName(e.target.value)}
+          IconBefore={InfoIcon}
+        />
+        <Input
+          name="last-name"
+          type="text"
+          value={lastName}
+          placeholder="Last name"
+          onChange={(e) => setLastName(e.target.value)}
           IconBefore={InfoIcon}
         />
         <Input

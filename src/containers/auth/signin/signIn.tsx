@@ -27,10 +27,10 @@ export const SignInContainer: React.FC<ISignInContainer> = ({ handleChangeAuth }
     <form className="auth-cart__form" onSubmit={onSubmit} autoComplete="off">
       <div className="form__item-col">
         <Input
-          name="login"
+          name="email"
           type="text"
           value={login}
-          placeholder="login"
+          placeholder="email"
           onChange={(e) => setLogin(e.target.value)}
           IconBefore={EmailIcon}
         />

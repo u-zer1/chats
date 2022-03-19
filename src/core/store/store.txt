@@ -1,1 +1,0 @@
-save all store configuration in this folder

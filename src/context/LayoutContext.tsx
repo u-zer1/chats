@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { EMODE } from 'core/types';
-import { saveLocalStore } from 'core/helpers';
+import { useLocalStorage } from 'core/hooks';
 
 interface IContext {
   settings: IDefaultSettings;
@@ -9,25 +8,27 @@ interface IContext {
 }
 
 interface IDefaultSettings {
-  theme?: string;
+  darkMode?: boolean;
 }
 
 const defaultSettings = {
-  theme: EMODE.LIGHT,
+  darkMode: false,
 };
 
 export const LayoutContext = React.createContext<IContext>({} as IContext);
 
-const LayoutProvider: React.FC<any> = ({ children, settings }) => {
-  const [currentSettings, setCurrentSettings] = React.useState<IDefaultSettings>(settings);
+const LayoutProvider: React.FC = ({ children }) => {
+  const [store, setStore] = useLocalStorage('mode');
 
   React.useEffect(() => {
-    if (currentSettings) saveLocalStore('mode', currentSettings);
-  }, [currentSettings]);
+    !store && setStore(defaultSettings);
+  }, []);
 
-  return (
-    <LayoutContext.Provider value={{ settings: currentSettings, saveSettings: setCurrentSettings }}>{children}</LayoutContext.Provider>
-  );
+  const saveSettings = (value: IDefaultSettings) => {
+    value && setStore({ ...store, ...value });
+  };
+
+  return <LayoutContext.Provider value={{ settings: store, saveSettings: saveSettings }}>{children}</LayoutContext.Provider>;
 };
 
 export default LayoutProvider;
